@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="MidiaQuire.css">
+  <title>Bolão Copa do Mundo 2026</title>
+</head>
+<body>
+   <div class="header-main">
+      <h1 class="h1Titulo">Bolão Copa do Mundo 2026</h1>
+    </div>
+  <header>
+    <div class="bandeiras">
+        <div class="bandeira-container">
+          <img class="Brasil" src="imagem/Brasil.jpg" alt="Bandeira do Brasil">
+          <p class="NomesPaises">Brasil</p>
+        </div> 
+        <h1 class="Placar1">0</h1>       
+        <h1 class="H1X">X</h1>
+        <h1 class="Placar2">0</h1>
+        <div class="bandeira-container">
+          <img class="Haiti" src="imagem/images.png" alt="Bandeira do Haiti">
+          <p class="NomesPaises">Haiti</p>
+        </div>
+    </div>
+    <div id="relogio" style="font-size: 2rem; font-weight: bold; font-family: monospace;"></div>
+  </header>
+
+  <section class="Conteiner_lista">
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">1</span>
+      <span class="palpite-nome">Adeilton</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">2</span> x <span class="placar-gols">0</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">2</span>
+      <span class="palpite-nome">Cleriston</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">2</span> x <span class="placar-gols">1</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">3</span>
+      <span class="palpite-nome">Douglas</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">4</span> x <span class="placar-gols">0</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">4</span>
+      <span class="palpite-nome">Gabriel</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">1</span> x <span class="placar-gols">0</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">5</span>
+      <span class="palpite-nome">Galego</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">4</span> x <span class="placar-gols">1</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">6</span>
+      <span class="palpite-nome">Gefesson</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">3</span> x <span class="placar-gols">0</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+    <div class="palpite-row">
+      <span class="bolinha-verde"></span>
+      <span class="palpite-num">7</span>
+      <span class="palpite-nome">Iarley</span>
+      <span class="palpite-divisor"></span>
+      <span class="palpite-placar">Brasil <span class="placar-gols">3</span> x <span class="placar-gols">1</span> Haiti</span>
+      <span class="btn-excluir">&times;</span>
+    </div>
+  </section>
+  <footer>
+    <div class="DivFooter2">
+    <p class="DivFooterP@" id="DivFooterP@">© {AnoAtual()} Kel Designer. Todos os direitos reservados.</p>
+  </div>
+  </footer>
+</body>
+<script>
+  function atualizarHorario() {
+    const agora = new Date();
+    const horario = agora.toLocaleTimeString('pt-BR');
+    document.getElementById('relogio').textContent = horario;
+}
+
+// Atualiza o relógio a cada 1000 milissegundos (1 segundo)
+setInterval(atualizarHorario, 1000);
+
+// Executa a função imediatamente para não ficar em branco no carregamento
+atualizarHorario();
+
+  let DivFooterP = document.getElementById('DivFooterP@');  
+  let data = new Date();
+  let anoAtual = data.getFullYear();
+  DivFooterP.innerHTML = `© ${anoAtual} Kel Designer. Todos os direitos reservados.`;
+</script>
+</html>
