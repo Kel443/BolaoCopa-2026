@@ -53,6 +53,24 @@ header {
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+header{
+  /* Estado final da div */
+  opacity: 1;
+  transform: translateY(0);
+  
+  /* Configuração da animação */
+  animation: fadeIn 1.2s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Começa um pouco mais abaixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .header-main {
   display: flex;
@@ -74,6 +92,21 @@ header {
   text-align: center;
   line-height: 1.2;
 }
+.h1Titulo{
+  /* Estado inicial: invisível e deslocado 30px para baixo */
+  opacity: 0;
+  transform: translateY(30px);
+  
+  /* Aciona a animação de 1.5 segundos */
+  animation: entradaSuave 2s ease-out forwards;
+}
+@keyframes entradaSuave {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .bandeiras {
   display: flex;
@@ -85,7 +118,12 @@ header {
   margin: 0 auto;
   transition: transform 0.3s ease;
 }
-
+.bandeiras{
+  animation: zoomIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.relogio{
+  animation: zoomIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 .bandeira-container {
   display: flex;
   flex-direction: column;
@@ -169,16 +207,18 @@ header {
   border-color: rgba(255, 255, 255, 0.08);
   transform: translateX(4px);
 }
-
-.bolinha-verde {
-  width: 8px;
-  height: 8px;
-  background-color: var(--neon-green);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
-  margin-right: 12px;
-  flex-shrink: 0;
-  animation: pulse 0.5s infinite alternate;
+.palpite-row{
+  animation: zoomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .palpite-num {
@@ -223,13 +263,89 @@ header {
   border-radius: 6px;
   border: 1px solid rgba(255, 215, 0, 0.2);
 }
-
+.bolinha-verde1 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde2 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde3 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde4 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde5 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde6 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
+.bolinha-verde7 {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  margin-right: 12px;
+  flex-shrink: 0;
+  animation: pulse 0.5s infinite alternate;
+}
 /* ==========================================================================
    CONTROLE DO ADMINISTRADOR
    Para exibir o botão de excluir "X" em cada palpite, mude a propriedade 
    'display' abaixo de 'none' para 'block'.
    ========================================================================== */
-.btn-excluir {
+.btn-excluir1 {
   display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
   color: var(--neon-red);
   font-size: 1.5rem;
@@ -240,14 +356,128 @@ header {
   transition: all 0.2s ease;
   user-select: none;
   opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
 }
 
-.btn-excluir:hover {
-  color: #ff4f70;
+.btn-excluir1:hover {
+  color: #d6042b;
   opacity: 1;
   transform: scale(1.2);
 }
+.btn-excluir2 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
 
+.btn-excluir2:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.btn-excluir3 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.btn-excluir3:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.btn-excluir4 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.btn-excluir4:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.btn-excluir5 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.btn-excluir5:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.btn-excluir6 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.btn-excluir6:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.btn-excluir7 {
+  display: none; /* MUDAR PARA block SE QUISER VISUALIZAR O X */
+  color: var(--neon-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  opacity: 0.7;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.btn-excluir7:hover {
+  color: #d6042b;
+  opacity: 1;
+  transform: scale(1.2);
+}
 /* Animações */
 @keyframes pulse {
   0% {
